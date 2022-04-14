@@ -12,8 +12,7 @@ public class QuanLyXeMay implements QuanLy<XeMay> {
 
     @Override
     public void sua(String name, XeMay xeMay) {
-
-
+        danhSach[timKiem(name)]= xeMay;
     }
 
     @Override
@@ -22,8 +21,14 @@ public class QuanLyXeMay implements QuanLy<XeMay> {
     }
 
     @Override
-    public XeMay timKiem(String name) {
-        danhSach[timKiem(name)]= XeMay;
+    public int timKiem(String name) {
+        for (int k = 0; k < size; k++) {
+            if (name == danhSach[k].getTenXe()) {
+                return k;
+            }
+
+        }
+        return 0;
     }
 
     @Override
